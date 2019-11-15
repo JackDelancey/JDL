@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="icon.png">
+<meta charset="UTF-8">
+<TITLE>Project Lift</TITLE>
+<style type="text/css">
+html {
+	background-color: black;
+}
+html, body {
+	overflow: visible;
+	overflow-x: hidden;
+}
+body {
+	overflow-y: none;
+	font-family: Verdana, Geneva, sans-serif;
+}
+div.content {
+	padding: 10px;
+	width: 79%;
+	height: 1500px;
+	position: relative;
+	display: inline-border;
+	overflow-y: hidden;
+	margin-left: 10px;
+}
+object {
+	width: 100%;
+	height: 990px;
+}
+/* CSS for menu sidebar */
+div.sidebar {
+	position: absolute;
+	width: 20%;
+	height: 97.6%;
+	background-color: #1f1f1f;
+	vertical-align: top;
+	color: #FFFFFF;
+}
+/*buttons that are used to open and close the accordion panel*/
+.accordion {
+	position: relative;
+	background-color: #404040;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 85%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+	color: #FFA500;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+}
+.active, .accordion:hover {
+	background-color: #ccc;
+}
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+	width: 74.5%;
+	padding: 0 18px;
+	background-color: #595959;
+	display: none;
+	overflow: hidden;
+	color: #FFA500;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	list-style-type: none;
+	text-decoration: none;
+	border: 1px #4a4f56;
+}
+li {
+	border: 2px #4a4f56;
+	padding: 3px;
+}
+li:hover{
+	color: lightgreen;
+	cursor: pointer;
+}
+ul#options {
+	list-style-type: none;
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFA500;
+	border: 1px #4a4f56;
+}
+/* End of menu sidebar CSS */
+/* Content div CSS */
+.body {
+	background-color: #1f1f1f;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	overflow-y: hidden;
+}
+.main {
+	height: 990px;
+	width: 79.7%;
+	float: right;
+	background-color: #e5e5e5;
+	display: inline-block;
+	margin-left: 20px;
+}
+/* End of content div CSS */
+/* header CSS */
+.header {
+	height: 100px;
+	width: 100%;
+	position: relative;
+	background-color: #1f1f1f;
+}
+.wrapper {
+	margin-right: 25px;
+}
+.logo {
+	float: left;
+	background-color: yellow;
+	height: 100%;
+	width: 20.2%;
+}
+.home {
+	width: 79%
+	height: 100%;
+	background-color: #1f1f1f; 
+	border-style:solid; 
+	border-color:white;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #FFA500; 
+	text-align: right;
+	padding: 1em;
+	float: right;
+	margin-top: 25px
+}
+.contact {
+	width: 79%
+	height: 100%;
+	background-color: #1f1f1f;
+	border-size: 1px; 
+	border-style:solid; 
+	border-color:white;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #FFA500; 
+	text-align: right;
+	padding: 1em;
+	float: right;
+	margin-top: 25px
+}
+.person {
+	width: 79%
+	height: 100%;
+	background-color: #1f1f1f;
+	border-size: 1px; 
+	border-style:solid; 
+	border-color:white;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #FFA500; 
+	text-align: right;
+	padding: 1em;
+	float: right;
+	margin-top: 25px
+}
+.person:hover {
+	color: lightgreen;
+}
+.contact:hover {
+	color: lightgreen;
+}
+.home:hover {
+	color: lightgreen;
+}
+/* End of Header CSS */
+#foot {
+	display: inline-block;
+	line-height: 1.25em;
+	text-align: center;
+	vertical-align: middle;
+	list-style-type: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 400;
+	color: white;
+}
+#foot:hover {
+	color: lightgreen;
+}
+#foot:visited {
+	color: hotpink;
+}
+#foot:active {
+	color: blue;
+}
+.footer {
+	vertical-align: middle;
+	width: 100%;
+	position: absolute;
+	margin-bottom: -400px;
+	bottom: 0;
+	height: 300px;
+	background-color: black;
+	color: #ffffff
+}
+.links {
+	left: auto;
+	width: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}
+p {
+	font-family: "europa";
+	line-height: 1.6em;
+	letter-spacing: .5px;
+	font-size: 14px;
+	color: rgba(255,255,255,.4);
+	display: block;
+	text-align: center;
+	cursor: auto;
+	font-weight: 300;
+
+}
+</style>
+<head>
+	<title>Project Lift</title>
+</head>
+<body>
+	<div class="header">
+		<div class="logo">
+			
+		</div>
+		<div class="wrapper">
+			<div class="person">Personal</div>
+			<div class="contact">Contact</div>
+			<div class="home" onclick="window.location.href='index.html'">Home</div>
+		</div>
+	</div>
+
+	<!--html for menu sidebar -->
+	<div class="sidebar">
+		<ul class="sidebar_menu">
+			<button class="accordion">About          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+			<div class="panel">
+				<ul id="options">
+					<li id="about" onclick="load_about()">About
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Personal          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+			<div class="panel">
+				<ul id="options">
+					<li>Split
+					</li>
+					<li>Shedule
+					</li>
+					<li>Log Book
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Level          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+			<div class="panel">
+				<ul id="options">
+					<li>Beginner
+					</li>
+					<li>Intermediate
+					</li>
+					<li>Advanced
+					</li>
+				</ul>
+			</div>
+
+			<button class="accordion">Muscle Group Info          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+			<div class="panel">
+				<ul id="options">
+					<li>Information
+					</li>
+				</div>
+
+				<button class="accordion">Powerlifting          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+				<div class="panel">
+					<ul id="options">
+						<li>Powerlifting
+						</li>
+					</div>
+
+					<button class="accordion">Weightlifting          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+					<div class="panel">
+						<ul id="options">
+							<li>Weightlifting
+							</li>
+						</div>
+
+						<button class="accordion">Location          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+						<div class="panel">
+							<ul id="options">
+								<li id="location" onclick="load_location()">Location
+								</li>
+							</div>
+
+							<button class="accordion">Contact          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+							<div class="panel">
+								<ul id="options">
+									<li id="details" onclick="load_details()">Details
+									</li>
+									<li id="social_media" onclick="load_social()">Social Media
+									</li>
+								</ul>
+							</div>
+
+							<button class="accordion">Accessability          <i class="fa fa-chevron-right" style="right:10px"></i></button>
+							<div class="panel">
+								<ul id="options">
+									<li>Theme
+									</li>
+									<li>Language
+									</li>
+									<li>On Screen Keyboard
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+				<div class="body">
+					<div class="main">
+						<div id="content">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae lacus ut eros posuere malesuada id at dolor. Cras eros purus, pharetra in sagittis id, tempor vel ex. Morbi bibendum faucibus ligula, ut interdum neque. Nullam porttitor tincidunt mauris, vel tincidunt ipsum. Suspendisse venenatis nulla a felis porta semper vel ac nunc. Cras vitae elementum enim, et tristique ipsum. Morbi sit amet dolor efficitur, commodo massa ut, facilisis turpis. Vivamus at sem in magna rhoncus tincidunt in sit amet dolor. Vivamus sit amet purus vitae ipsum dignissim porta. Nam gravida purus velit, efficitur placerat sapien posuere ut. Proin in nunc sit amet est vulputate consequat et sit amet ipsum. Mauris a lorem eleifend, sollicitudin mi et, dignissim ligula. Proin malesuada odio sit amet fermentum feugiat.
+
+							Cras eget ex a sem commodo laoreet. In iaculis sapien at odio commodo, in placerat felis viverra. Duis sed mi a purus mollis commodo et vel neque. Aliquam eget massa elementum, congue enim sit amet, imperdiet neque. Phasellus sit amet urna massa. Morbi quis sem mauris. Quisque non molestie erat, ut tristique tellus. Donec placerat, augue in sagittis euismod, orci est euismod enim, et tempor augue purus non nibh. Ut tempor, nunc sed consequat sagittis, leo neque gravida orci, eget iaculis mauris ipsum et libero. Phasellus a erat quis purus mollis venenatis sed eget lorem. Vestibulum vitae ultrices leo. Donec sit amet tempor nulla. Duis molestie tortor non magna pellentesque, sit amet venenatis ipsum condimentum. Proin ut porta tortor, at rhoncus ante.
+						</div>
+					</div>
+				</div>
+				<div class="footer">
+					<div class="links">
+						<a id="foot">
+							<span>About</span>
+						</a>
+						<a id="foot">
+							<span>Details</span>
+						</a>
+
+						<a id="foot">
+							<span>Personal</span>
+						</a>
+					</div>
+					<p>Project Lift</p>
+					<p>1 Gable Mews, Salford Road, Bidford-on-Avon, Warwickshire, B50 4ES</p>
+					<p>jack.delancey19@gmail.com - 07531142658</p>
+				</div>
+<script type="text/javascript">
+					var acc = document.getElementsByClassName("accordion");
+					var i;
+
+					for (i = 0; i < acc.length; i++) {
+						acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+        	panel.style.display = "none";
+        } else {
+        	panel.style.display = "block";
+        }
+    });
+					}
+					/* Home Page */
+					function load_index() {
+						document.getElementById("html").innerHTML='<object type=text/html" data="index.html" ></object>';
+					}
+					/* About */
+					function load_about() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="about.html" ></object>';
+					}
+					/* Personal */
+					function load_split() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="split.html" ></object>';
+					}
+					function load_shedule() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="shedule.html" ></object>';
+					}
+					function load_log_book() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="log_book.html" ></object>';
+					}
+					/* Level */
+					function load_beginner() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="beginner.html" ></object>';
+					}
+					function load_intermediate() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="intermediate.html" ></object>';
+					}
+					function load_advanced() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="advanced.html" ></object>';
+					}
+					/* Muscle Group Info */
+					function load_muscle_group() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="muscle_group.html" ></object>';
+					}
+					/* Powerlifting */
+					function load_powerlifting() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="powerlifting.html" ></object>';
+					}
+					/* Weightlifting */
+					function load_weightlifting() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="weightlifting.html" ></object>';
+					}
+					/* Location */
+					function load_location() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="location.html" ></object>';
+					}
+					/* Contact */
+					function load_details() {
+						document.getElementById("content").innerHTML='<object type=text/html" data="contact/details.html" ></object>';
+					}
+					function load_social() {
+						document.getElementById("content").innerHTML='<object type="text/html" data="contact/social_media.html" ></object>';
+					}
+					/* Accessability */
+				</script>
+			</body>
+			</html>

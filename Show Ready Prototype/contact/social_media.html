@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="UTF-8">
+	<title>Project Lift Social Media</title>
+	<style type="text/css">
+	html, body {
+		overflow-x: hidden;
+	}
+	body {
+		background-color: #e5e5e5;
+		height: 100%;
+	}
+	div.social {
+		width: 40%;
+		height: 100px;
+		background-color: transparent; 
+		position: absolute;
+		display: block;
+		padding: 20px;
+	}
+	.twitter {
+		background-color:  #1dcaff; /* Twitter Blue */
+		font-family: Helvetica;
+		font-weight: bold;
+		color: white;
+		border: none;
+		width: 70%;
+		height: 65px;
+		font-size: 42px;
+		cursor: pointer;
+		padding: 10px;
+		margin-top: 0px;
+		border-radius: 15px 50px;
+		display: inline-block;
+	}
+	.fa-twitter-square {
+		color:  #1dcaff;
+		margin-right: 30px;
+		float: right;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.instagram {
+		background: linear-gradient(200deg, #d047d1, #ff0000, #ffff00); /* Instagram gradient */
+		font-family: Billabong;
+		font-weight: bold;
+		color: white;
+		border: none;
+		width: 70%;
+		height: 65px;
+		cursor: pointer;
+		padding: 15px;
+		margin-top: 0px;
+		border-radius: 15px 50px;
+		display: inline-block;
+	}
+	.fa-instagram {
+		color: pink;
+		float: right;
+		margin-right: 30px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.snapchat {
+		background: #fffc00; /* Snapchat Yellow */
+		font-family: Helvetica;
+		font-weight: bold;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+		color: white;
+		border: none;
+		width: 70%;
+		height: 65px;
+		font-size: 42px;
+		cursor: pointer;
+		padding: 12px;
+		margin-top: 0px;
+		border-radius: 15px 50px;
+		display: inline-block;
+	}
+	.fa-snapchat-square {
+		color: #fffc00;
+		margin-right: 30px;
+		float: right;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.facebook {
+		background: #3b5998; /* Facebook Blue */
+		font-family: Impact;
+		color: white;
+		border: none;
+		width: 70%;
+		height: 65px;
+		font-size: 42px;
+		cursor: pointer;
+		padding: 10px;
+		margin-top: 0px;
+		border-radius: 15px 50px;
+		display: inline-block;
+	}
+	.fa-facebook-square {
+		color: #3b5998;
+		margin-right: 30px;
+		float: right;
+		display: inline-block;
+		vertical-align: top;
+
+	}
+	.info {
+		font-family: Verdana, Geneva, sans-serif;
+		float: right;
+		background-color: transparent;
+		display: block;
+		height: 30%;
+		width: 50%;
+		margin-right: 10px;
+		padding: 20px;
+		margin-top: 20px;
+	}
+	.gallery {
+		height: 65%;
+		width: 1520px;
+		float: left;
+		background-color: #1f1f1f;
+		position: absolute;
+		bottom: 0;
+		left: 0px;
+		border: 2px solid black;
+	}
+	#images {
+		width: 500px;
+		height: 500px;
+		float: left;
+		background-color: black;
+		padding: 20px;
+		border: 20px solid #1f1f1f;
+		margin-left: 42px;
+	}
+	/* Slideshow */
+	* {box-sizing:border-box;
+	}
+
+	/* Slideshow container */
+	.slideshow-container {
+		max-width: 1000px;
+		position: relative;
+		margin: auto;
+	}
+
+	/* Hide the images by default */
+	.mySlides {
+		display: none;
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		margin-top: -22px;
+		padding: 16px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	/* On hover, add a black background color with a little bit see-through */
+	.prev:hover, .next:hover {
+		background-color: rgba(0,0,0,0.8);
+	}
+
+	/* Caption text */
+	.text {
+		color: #f2f2f2;
+		font-size: 15px;
+		padding: 8px 12px;
+		position: absolute;
+		bottom: 8px;
+		width: 100%;
+		text-align: center;
+	}
+
+	/* Number text (1/3 etc) */
+	.numbertext {
+		color: #f2f2f2;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
+	}
+
+	/* The dots/bullets/indicators */
+	.dot {
+		cursor:pointer;
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+	}
+
+	.active, .dot:hover {
+		background-color: #717171;
+	}
+
+	/* Fading animation */
+	.fade {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 1.5s;
+		animation-name: fade;
+		animation-duration: 1.5s;
+	}
+
+	@-webkit-keyframes fade {
+		from {opacity: .4} 
+		to {opacity: 1}
+	}
+
+	@keyframes fade {
+		from {opacity: .4} 
+		to {opacity: 1}
+	}
+</style>
+<body>
+	<div class="social">
+		<div class="twit_ter">
+			<button class="twitter">Twitter</button>
+			<i class="fa fa-twitter-square fa-4x" ></i>
+		</div>
+		<div class="insta_gram">
+			<button class="instagram" onclick="window.open('https://www.instagram.com/jack_de_lancey/');">
+				<img src="images/instagram_logo.png" alt="Instagram" class="insta_img" style="height: 50px;width: 65%; margin-top: -3px;"></button>
+				<i class="fa fa-instagram fa-4x"></i>
+			</div> 
+			<div class="snap_chat">
+				<button class="snapchat">Snapchat</button>
+				<i class="fa fa-snapchat-square fa-4x"></i>
+			</div>
+			<div class="face_book">
+				<button class="facebook">Facebook</button>
+				<i class="fa fa-facebook-square fa-4x"></i>
+			</div>
+		</div>
+		<div class="info">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vitae lacus ut eros posuere malesuada id at dolor. Cras eros purus, pharetra in sagittis id, tempor vel ex. Morbi bibendum faucibus ligula, ut interdum neque. Nullam porttitor tincidunt mauris, vel tincidunt ipsum. Suspendisse venenatis nulla a felis porta semper vel ac nunc. Cras vitae elementum enim, et tristique ipsum. Morbi sit amet dolor efficitur, commodo massa ut, facilisis turpis. Vivamus at sem in magna rhoncus tincidunt in sit amet dolor. Vivamus sit amet purus vitae ipsum dignissim porta. Nam gravida purus velit, efficitur placerat sapien posuere ut. Proin in nunc sit amet est vulputate consequat et sit amet ipsum. Mauris a lorem eleifend, sollicitudin mi et, dignissim ligula. Proin malesuada odio sit amet fermentum feugiat.
+		</div>
+		<div class="gallery">
+			<!-- Slideshow container -->
+			<div class="slideshow-container">
+
+				<!-- Full-width images with number and caption text -->
+				<div class="mySlides fade">
+					<div class="numbertext">1 - 3</div>
+					<img src="images/carousel/stock1.jpg" style="width:33%">
+					<img src="images/carousel/stock6.jpg" style="width:33%">
+					<img src="images/carousel/stock2.PNG" style="width:33%">
+					<div class="text">First Set</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">4 - 6</div>
+					<img src="images/carousel/stock3.jpg" style="width:33%">
+					<img src="images/carousel/stock4.jpg" style="width:33%">
+					<img src="images/carousel/stock5.jpg" style="width:33%">
+					<div class="text">Second Set</div>
+				</div>
+
+  <!--<div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img3.jpg" style="width:33%">
+    <div class="text">Caption Three</div>
+</div>-->
+
+<!-- Next and previous buttons -->
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+	<span class="dot" onclick="currentSlide(1)"></span> 
+	<span class="dot" onclick="currentSlide(2)"></span> 
+	<span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+</div>
+<script type="text/javascript">
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+	if (n > slides.length) {slideIndex = 1} 
+		if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none"; 
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex-1].style.display = "block"; 
+			dots[slideIndex-1].className += " active";
+		}
+	</script>
+</body>
+</html>
